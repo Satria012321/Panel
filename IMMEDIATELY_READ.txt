@@ -1,0 +1,91 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                     KEY GENERATOR SERVER SETUP                             ║
+║                    Instruksi Login & Registrasi                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+LANGKAH 1: BUKA TERMINAL BARU
+════════════════════════════════════════════════════════════════════════════════
+Jalankan command ini:
+
+    node scripts/create-owner.js
+
+SALIN INVITATION CODE yang ditampilkan (string panjang alphanumeric)
+
+
+LANGKAH 2: BUKA BROWSER
+════════════════════════════════════════════════════════════════════════════════
+Buka: http://localhost:3000
+
+
+LANGKAH 3: KLIK TAB "REGISTER"
+════════════════════════════════════════════════════════════════════════════════
+Isi form:
+  • Username: Pilih username (contoh: myreseller)
+  • Password: Pilih password (contoh: mypassword123)
+  • Confirm: Ulangi password yang sama
+  • Invitation Code: Tempel code dari LANGKAH 1
+  
+Klik "Register" → Selesai! ✓
+
+
+UNTUK OWNER (Optional)
+════════════════════════════════════════════════════════════════════════════════
+Login dengan:
+  • Username: owner
+  • Password: owner123
+
+Sebagai Owner Anda bisa:
+  ✓ Kelola semua user
+  ✓ Buat invitation code baru
+  ✓ Ubah balance user
+  ✓ Ubah role user
+
+
+GAMES YANG DIDUKUNG
+════════════════════════════════════════════════════════════════════════════════
+1. CODM - Call of Duty Mobile
+2. MLBB - Mobile Legends Bang Bang
+3. HOK  - Honor of Kings
+4. FF   - Free Fire
+5. PUBG - PUBG Mobile
+6. VAL  - Valorant
+7. GI   - Genshin Impact
+8. AOV  - Arena of Valor
+
+
+MASALAH & SOLUSI
+════════════════════════════════════════════════════════════════════════════════
+P: "Invitation code tidak valid"
+J: - Pastikan copy code dengan benar
+   - Code hanya bisa dipakai 1x
+   - Check expiration date (biasanya 30 hari)
+
+P: "Username sudah dipakai"
+J: Gunakan username yang berbeda
+
+P: "Database connection failed"
+J: Jalankan: node scripts/init-db.js
+
+
+DEFAULT ACCOUNT
+════════════════════════════════════════════════════════════════════════════════
+Owner:
+  Username: owner
+  Password: owner123
+
+
+FILE DOKUMENTASI
+════════════════════════════════════════════════════════════════════════════════
+Baca setelah setup:
+
+1. LOGIN_GUIDE.md - Panduan login detail
+2. API_DOCUMENTATION.md - Referensi API
+3. TESTING.md - Contoh testing
+4. GET_STARTED.md - Setup lengkap
+5. README.md - Overview lengkap
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    SIAP DIGUNAKAN! 🚀                                      ║
+║                   Ikuti 3 langkah di atas!                                 ║
+╚════════════════════════════════════════════════════════════════════════════╝

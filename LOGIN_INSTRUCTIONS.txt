@@ -1,0 +1,197 @@
+================================================================================
+                    KEY GENERATOR SERVER - LOGIN INSTRUCTIONS
+================================================================================
+
+STEP 1: Start the Application
+================================================================================
+
+Open terminal and run:
+    pnpm dev
+
+Wait for message: "✓ Ready in X.Xs"
+Then open: http://localhost:3000
+
+
+STEP 2: Create Owner Account & Get Your Invitation Code
+================================================================================
+
+Open a NEW terminal tab and run:
+    node scripts/create-owner.js
+
+You'll see something like:
+
+    ✅ Owner account created successfully!
+    
+    📋 Owner Login Credentials:
+       Username: owner
+       Password: owner123
+    
+    🎟️  Invitation Code for You (Reseller):
+       Code: A1B2C3D4E5F6G7H8I9J0
+       Role: Reseller
+       Expires: 4/1/2027, 4:00:00 PM
+
+SAVE the invitation code (the long alphanumeric string) - you'll need it next!
+
+
+STEP 3: Register Your Account
+================================================================================
+
+Go back to: http://localhost:3000
+
+1. Click the "Register" tab at the top
+2. Fill in the form:
+   - Username: Choose any username (e.g., "myreseller")
+   - Password: Choose a secure password
+   - Confirm Password: Repeat your password
+   - Invitation Code: Paste the code from STEP 2
+3. Click "Register"
+
+You're now logged in as a Reseller!
+
+
+STEP 4: Start Using the App
+================================================================================
+
+Now you can:
+
+As a Reseller (your account):
+  • Generate API keys for 8 games (CODM, MLBB, HOK, FF, PUBG, VAL, GI, AOV)
+  • View your balance
+  • See your transaction history
+  • Use the API endpoints
+
+To Login as Owner (optional - to manage users):
+  1. Click "Login" tab
+  2. Enter: username=owner, password=owner123
+  3. Click "Login"
+  
+  As Owner you can:
+  • View all users
+  • Create invitations for new users
+  • Manage user balances
+  • Change user roles
+  • View all transactions
+
+
+DEFAULT ACCOUNTS
+================================================================================
+
+Owner Account:
+  Username: owner
+  Password: owner123
+
+Your Account:
+  Username: (what you registered)
+  Password: (what you registered)
+  Role: Reseller
+
+
+GAMES YOU CAN GENERATE KEYS FOR
+================================================================================
+
+1. CODM - Call of Duty Mobile
+2. MLBB - Mobile Legends Bang Bang
+3. HOK  - Honor of Kings
+4. FF   - Free Fire
+5. PUBG - PUBG Mobile
+6. VAL  - Valorant
+7. GI   - Genshin Impact
+8. AOV  - Arena of Valor
+
+
+TROUBLESHOOTING
+================================================================================
+
+Q: "Invitation code is invalid"
+A: Make sure you:
+   - Copied the code correctly from STEP 2
+   - Used it before it expired (usually 30 days)
+   - Haven't used it twice (each code works once only)
+
+Q: "Username already exists"
+A: Choose a different username in the registration form
+
+Q: "Can't find the registration page"
+A: Make sure you're on http://localhost:3000 and click the "Register" tab
+
+Q: "Database connection failed"
+A: Run this command in a terminal:
+   node scripts/init-db.js
+
+Q: "Command not found: pnpm"
+A: Install Node.js dependencies first:
+   pnpm install
+
+
+NEXT STEPS
+================================================================================
+
+Read these files (in order) for more information:
+
+1. LOGIN_GUIDE.md - Detailed login & account instructions
+2. GET_STARTED.md - Complete setup guide
+3. API_DOCUMENTATION.md - API endpoint reference
+4. TESTING.md - Testing examples
+5. QUICK_REFERENCE.md - Quick lookup guide
+6. README.md - Full project overview
+
+
+QUICK COMMANDS
+================================================================================
+
+# Start the server
+pnpm dev
+
+# Create owner & get invitation code
+node scripts/create-owner.js
+
+# Initialize database (if needed)
+node scripts/init-db.js
+
+# Build for production
+pnpm build
+
+# Run production server
+npm start
+
+
+API EXAMPLE
+================================================================================
+
+Once you have an API key, test it:
+
+curl -X POST http://localhost:3000/api/connect \
+  -H "Content-Type: application/json" \
+  -d '{
+    "action": "validate",
+    "key": "YOUR_API_KEY_HERE",
+    "serialNumber": "TEST123"
+  }'
+
+
+IMPORTANT NOTES
+================================================================================
+
+• Each user gets a unique API key per game
+• API keys are valid for 30 days by default
+• Keys can be revoked anytime
+• Balance is tracked for Resellers (max: 9,999,999,999,999,999)
+• Owner and Admin have unlimited balance
+• All actions are logged in the transactions table
+
+
+SUPPORT
+================================================================================
+
+For detailed help, check:
+- LOGIN_GUIDE.md - Account and login issues
+- API_DOCUMENTATION.md - API integration questions
+- SETUP.md - Installation and configuration
+- TESTING.md - Testing and debugging
+- README.md - Complete documentation
+
+================================================================================
+                            YOU'RE ALL SET! 🚀
+           Follow the 4 steps above to get started immediately!
+================================================================================
